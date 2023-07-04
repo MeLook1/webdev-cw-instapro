@@ -61,28 +61,29 @@ export function renderPostsPageComponent({ appEl }) {
   }
 
 
-for (let like of document.querySelectorAll('.like-button')) {
-  like.addEventListener('click', (event) => {
-    const target = event.target;
-    const likedPostId = target.dataset.postId;
-    const isPostLiked = target.dataset.isliked;
-    const value = target.parentElement.nextElementSibling.firstChild.nextSibling;
+  for (let like of document.querySelectorAll('.like-button')) {
+    like.addEventListener('click', (event) => {
+      const target = event.target;
+      const likedPostId = target.dataset.postId;
+      const isPostLiked = target.dataset.isliked;
+      const value = target.parentElement.nextElementSibling.firstChild.nextSibling;
 
-    if (isPostLiked === 'true') {
-      removeLike(likedPostId).then((data) => {
-        console.log(data);
-        target.dataset.isliked = false;
-        target.src = './assets/images/like-not-active.svg';
-        value.textContent = +value.textContent - 1;
-      })
-    } else {
-      addLike(likedPostId).then((data) => {
-        console.log(data);
-        target.dataset.isliked = true;
-        target.src = './assets/images/like-active.svg';
-        value.textContent = +value.textContent + 1;
-      })
-    } 
-})
+      if (isPostLiked === 'true') {
+        removeLike(likedPostId).then((data) => {
+          console.log(data);
+          target.dataset.isliked = false;
+          target.src = './assets/images/like-not-active.svg';
+          value.textContent = +value.textContent - 1;
+        })
+      } else {
+        addLike(likedPostId).then((data) => {
+          console.log(data);
+          target.dataset.isliked = true;
+          target.src = './assets/images/like-active.svg';
+          value.textContent = +value.textContent + 1;
+        })
+      }
+    })
+  }
 }
-}
+////
