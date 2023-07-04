@@ -46,7 +46,7 @@ export function renderPostsPageComponent({ appEl }) {
     `
   }).join("");
 
-  appEl.innerHTML = appHtml;
+  appEl.innerHTML = postsHtml;
 
   renderHeaderComponent({
     element: document.querySelector(".header-container"),
@@ -59,7 +59,7 @@ export function renderPostsPageComponent({ appEl }) {
       });
     });
   }
-}
+
 
 for (let like of document.querySelectorAll('.like-button')) {
   like.addEventListener('click', (event) => {
@@ -84,4 +84,5 @@ for (let like of document.querySelectorAll('.like-button')) {
       })
     } 
 })
+}
 }

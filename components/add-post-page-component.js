@@ -44,12 +44,13 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
       },
     });
 
-
     document.getElementById("add-button").addEventListener("click", () => {
+
       const imageDescription = document.querySelector('.textarea').value;
+
       onAddPostClick({
-        description: "Описание картинки",
-        imageUrl: "https://image.png",
+        description: imageDescription,
+        imageUrl: imageUrl,
       });
     });
   };
