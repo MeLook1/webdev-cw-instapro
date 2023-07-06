@@ -86,4 +86,4 @@ export function renderPostsPageComponent({ appEl }) {
     })
   }
 }
-//////
+/////////
