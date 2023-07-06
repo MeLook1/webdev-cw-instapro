@@ -46,7 +46,11 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
 
     document.getElementById("add-button").addEventListener("click", () => {
 
-      const imageDescription = document.querySelector('.textarea').value;
+      const imageDescription = document.querySelector('.textarea').value
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;");
 
       onAddPostClick({
         description: imageDescription,
